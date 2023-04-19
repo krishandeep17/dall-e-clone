@@ -1,10 +1,7 @@
-import express from "express";
 import * as dotenv from "dotenv";
 import { Configuration, OpenAIApi } from "openai";
 
 dotenv.config();
-
-const router = express.Router();
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
@@ -12,11 +9,7 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-router.route("/").get((req, res) => {
-  res.send("hello from dall-e");
-});
-
-router.route("/").post(async (req, res) => {
+const postCreateImage = async (req, res) => {
   try {
     const aiResponse = await openai.createImage({
       prompt: req.body.prompt,
@@ -31,6 +24,10 @@ router.route("/").post(async (req, res) => {
   } catch (error) {
     res.status(500).send(error?.response.data.error.message);
   }
-});
+};
 
-export default router;
+const getCreateImage = (req, res) => {
+  res.send("Hello from OpenAI!");
+};
+
+export { getCreateImage, postCreateImage };

@@ -1,11 +1,9 @@
 import express from "express";
-import * as dotenv from "dotenv";
-import { v2 as cloudinary } from "cloudinary";
 
-import Post from "../mongodb/models/post.js";
-
-dotenv.config();
+import { getAllPosts, createPost } from "../controllers/postController.js";
 
 const router = express.Router();
+
+router.route("/").get(getAllPosts).post(createPost);
 
 export default router;
