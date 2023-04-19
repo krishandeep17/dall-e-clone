@@ -21,12 +21,15 @@ const Home = () => {
     const fetchPosts = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/post`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const res = await fetch(
+          "https://text2image-ai.onrender.com/api/v1/post",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
 
         if (res.ok) {
           const result = await res.json();

@@ -27,7 +27,7 @@ const CreatePost = () => {
         setGeneratingImg(true);
 
         const res = await fetch(
-          `${import.meta.env.VITE_API_URL}/api/v1/createImage`,
+          "https://text2image-ai.onrender.com/api/v1/createImage",
           {
             method: "POST",
             headers: {
@@ -59,13 +59,16 @@ const CreatePost = () => {
     if (form.prompt && form.photo) {
       setLoading(true);
       try {
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/post`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(form),
-        });
+        const res = await fetch(
+          "https://text2image-ai.onrender.com/api/v1/post",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(form),
+          }
+        );
 
         await res.json();
         navigate("/");
