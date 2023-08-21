@@ -1,8 +1,25 @@
-import Alert from "./Alert";
 import Card from "./Card";
+import Error from "./Error";
 import Footer from "./Footer";
-import FormField from "./FormField";
+import GeneratedImage from "./GeneratedImage";
+import Heading from "./Heading";
 import Loader from "./Loader";
+import NameInput from "./NameInput";
 import Navbar from "./Navbar";
+import PromptInput from "./PromptInput";
+import SearchBar from "./SearchBar";
+import Subheading from "./Subheading";
 
-export { Alert, Card, Footer, FormField, Navbar, Loader };
+export {
+  Card,
+  Error,
+  Footer,
+  GeneratedImage,
+  Heading,
+  Loader,
+  NameInput,
+  Navbar,
+  PromptInput,
+  SearchBar,
+  Subheading,
+};

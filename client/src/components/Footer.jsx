@@ -2,16 +2,16 @@ import { FaHeart } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="max-w-5xl mx-auto px-4 pt-5 pb-12">
-      <p className="text-[#6E6E80] text-base flex items-center justify-center gap-1">
+    <footer className="mx-auto max-w-5xl px-4 pb-12 pt-5">
+      <p className="flex items-center justify-center gap-1 text-base text-[#6E6E80]">
         <span>Coded with</span>
-        <FaHeart className="text-primary inline-block" />
+        <FaHeart className="inline-block text-primary" />
         <span>by</span>
         <a
-          href="https://krishandeep.netlify.app/"
+          href="https://github.com/krishandeep17"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-primary hover:text-primary_600 font-medium"
+          className="font-medium text-primary hover:text-primary_600"
         >
           Krishandeep
         </a>

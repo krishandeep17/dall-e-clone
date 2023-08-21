@@ -8,6 +8,14 @@
   font-family: "Inter", sans-serif;
 }
 
+body {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(148, 135, 255, 0.08),
+    rgba(148, 135, 255, 0)
+  );
+}
+
 @media screen and (min-width: 480px) {
   .card:nth-child(7n + 1) {
     grid-column: auto/span 2;
