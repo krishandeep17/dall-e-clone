@@ -27,12 +27,20 @@ const createPost = async (req, res) => {
     const { name, prompt, photo } = req.body;
 
     // CLOUDINARY UPLOAD
-    const uploadedImage = await cloudinary.uploader.upload(photo);
+    const uploadedImage = await cloudinary.uploader.upload(photo, {
+      resource_type: "image",
+      folder: "text2image-ai",
+      transformation: [
+        { effect: "improve" },
+        { quality: "auto" },
+        { fetch_format: "auto" },
+      ],
+    });
 
     const newPost = await Post.create({
       name,
       prompt,
-      photo: uploadedImage.url,
+      photo: uploadedImage.secure_url,
     });
 
     res.status(201).json({ status: "success", data: newPost });
