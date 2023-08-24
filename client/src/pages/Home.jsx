@@ -35,10 +35,10 @@ const Home = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
+      try {
       setIsLoading(true);
       setError("");
-
-      try {
+        
         const response = await fetch(`${URL}/api/v1/post`, {
           method: "GET",
           headers: {
