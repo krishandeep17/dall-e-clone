@@ -8,7 +8,7 @@ const Footer = () => {
         <FaHeart className="inline-block text-primary" />
         <span>by</span>
         <a
-          href="https://github.com/krishandeep17"
+          href="https://linktr.ee/krishandeep"
           target="_blank"
           rel="noopener noreferrer"
           className="font-medium text-primary hover:text-primary_600"
